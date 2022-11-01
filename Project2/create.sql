@@ -43,7 +43,8 @@ primary key(cid, section));
 CREATE TABLE final_exam(
 eid char(10),
 course_name char(40),
-exam_time date,
+exam_date date,
+exam_time char(10),
 primary key(eid));
 
 CREATE TABLE parking(
@@ -101,7 +102,7 @@ foreign key (pid) references student);
 CREATE TABLE schedules(
 pid integer,
 eid char(10),
-exam_time date,
+exam_date date,
 primary key(eid, pid),
 foreign key (pid) references professor,
 foreign key (eid) references final_exam);
@@ -254,14 +255,14 @@ VALUES('CSCI411', 1, 'Database Theory and Design', 'Spring');
 INSERT INTO course(cid, section, course_name, semester)
 VALUES('MATH221', 1, 'Calculus 1', 'Spring');
 
-INSERT INTO final_exam(eid, course_name, exam_time)
-VALUES('E11', 'Computer Science 2', TO_DATE('17-DEC-2022 11:30:00','DD-MON-YYYY HH:MI:SS'));
-INSERT INTO final_exam(eid, course_name, exam_time)
-VALUES('E12', 'Computer Architecture 2', TO_DATE('15-DEC-2022 12:15:00','DD-MON-YYYY HH:MI:SS'));
-INSERT INTO final_exam(eid, course_name, exam_time)
-VALUES('E21', 'Database Theory and Design', TO_DATE('04-MAY-2023 12:00:00','DD-MON-YYYY HH:MI:SS'));
-INSERT INTO final_exam(eid, course_name, exam_time)
-VALUES('E22', 'Calculus 1', TO_DATE('06-MAY-2023 08:30:00','DD-MON-YYYY HH:MI:SS'));
+INSERT INTO final_exam(eid, course_name, exam_date, exam_time)
+VALUES('E21', 'Database Theory and Design', TO_DATE('04-MAY-2023','DD-MON-YYYY'), '12:00:00');
+INSERT INTO final_exam(eid, course_name, exam_date, exam_time)
+VALUES('E11', 'Computer Science 2', TO_DATE('17-DEC-2022','DD-MON-YYYY'), '11:30:00');
+INSERT INTO final_exam(eid, course_name, exam_date, exam_time)
+VALUES('E12', 'Computer Architecture 2', TO_DATE('15-DEC-2022','DD-MON-YYYY'), '12:15:00');
+INSERT INTO final_exam(eid, course_name, exam_date, exam_time)
+VALUES('E22', 'Calculus 1', TO_DATE('06-MAY-2023','DD-MON-YYYY'), '08:30:00');
 
 INSERT INTO parking(permit_id, space_number, car_model, lot_name)
 VALUES(92080, 1, '2021 Ford Fusion', 'N Lot');
@@ -416,14 +417,14 @@ VALUES(10020, 'MATH221', 1);
 INSERT INTO registers(pid, cid, section)
 VALUES(10010, 'CSCI411', 1);
 
-INSERT INTO schedules(pid, eid, exam_time)
-VALUES(10005, 'E11', TO_DATE('17-DEC-2022 11:30:00','DD-MON-YYYY HH:MI:SS'));
-INSERT INTO schedules(pid, eid, exam_time)
-VALUES(10015, 'E12', TO_DATE('15-DEC-2022 12:15:00','DD-MON-YYYY HH:MI:SS'));
-INSERT INTO schedules(pid, eid, exam_time)
-VALUES(10015, 'E21', TO_DATE('04-MAY-2023 12:00:00','DD-MON-YYYY HH:MI:SS'));
-INSERT INTO schedules(pid, eid, exam_time)
-VALUES(10080, 'E22', TO_DATE('06-MAY-2023 08:30:00','DD-MON-YYYY HH:MI:SS'));
+INSERT INTO schedules(pid, eid, exam_date)
+VALUES(10005, 'E11', TO_DATE('17-DEC-2022','DD-MON-YYYY'));
+INSERT INTO schedules(pid, eid, exam_date)
+VALUES(10015, 'E12', TO_DATE('15-DEC-2022','DD-MON-YYYY'));
+INSERT INTO schedules(pid, eid, exam_date)
+VALUES(10015, 'E21', TO_DATE('04-MAY-2023','DD-MON-YYYY'));
+INSERT INTO schedules(pid, eid, exam_date)
+VALUES(10080, 'E22', TO_DATE('06-MAY-2023','DD-MON-YYYY'));
 
 INSERT INTO takes(eid, cid, section)
 VALUES('E11', 'CSCI301', 1);
