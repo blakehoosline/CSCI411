@@ -25,6 +25,7 @@ WHERE P.pid = S.pid AND S.pid = FG.pid AND FG.eid = FE.eid AND FG.grade = N;
 DBMS_SQL.RETURN_RESULT(Earned);
 END;
 
+--enter a grade here such as 'A'
 EXEC WhoEarned ('grade');
 
 
@@ -39,6 +40,7 @@ DBMS_OUTPUT.PUT_LINE('Students taking exam ' || N || ' are:');
 DBMS_SQL.RETURN_RESULT(Exam);
 END;
 
+--enter a course id such as 'E11'
 EXEC ExamTakers('Course EID');
 
 
