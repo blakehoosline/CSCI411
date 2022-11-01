@@ -40,7 +40,7 @@ DBMS_OUTPUT.PUT_LINE('Students taking exam ' || N || ' are:');
 DBMS_SQL.RETURN_RESULT(Exam);
 END;
 
---enter a course id such as 'E11'
+--enter a course id here such as 'E11'
 EXEC ExamTakers('Course EID');
 
 
