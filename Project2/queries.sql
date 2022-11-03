@@ -11,3 +11,10 @@ FROM professor P
 WHERE EXISTS (SELECT T.pid, T.cid 
               FROM teaches T 
               WHERE P.pid = T.pid AND T.cid = 'CSCI301');
+
+--find average hours of volunteers who park in 'N lot'
+SELECT AVG(V.hours_worked)
+FROM volunteers V, parks P, parking K
+WHERE V.pid = P.pid AND
+      P.permit_id = K.permit_id AND
+      K.lot_name = 'N Lot';
