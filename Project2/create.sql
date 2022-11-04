@@ -1,19 +1,19 @@
-create table person( 
+CREATE TABLE person( 
 pid integer,
 name char(20),
 primary key(pid));
 
-create table student(
+CREATE TABLE student(
 pid integer,
 primary key(pid),
 foreign key (pid) references person (pid));
 
-create table professor(
+CREATE TABLE professor(
 pid integer,
 primary key(pid),
 foreign key (pid) references person (pid));
 
-create table transcript(
+CREATE TABLE transcript(
 tid integer,
 gpa float,
 primary key(tid));
