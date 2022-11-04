@@ -18,3 +18,9 @@ FROM volunteers V, parks P, parking K
 WHERE V.pid = P.pid AND
       P.permit_id = K.permit_id AND
       K.lot_name = 'N Lot';
+  
+-- find the pid of students that have a gpa of a 'B' average or worse
+SELECT V.pid
+FROM views V, transcript T
+WHERE V.tid = T.tid AND T.gpa < 3.00
+GROUP BY V.pid;
