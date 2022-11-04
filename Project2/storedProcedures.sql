@@ -71,3 +71,70 @@ DBMS_SQL.RETURN_RESULT(V);
 END;
 
 EXEC CheckVolunteers;
+
+CREATE OR REPLACE PROCEDURE Students 
+AS
+Students SYS_REFCURSOR;
+BEGIN
+OPEN Students FOR
+SELECT DISTINCT P.pid, P.name
+FROM Person P, Student S
+WHERE P.pid = S.pid;
+DBMS_SQL.RETURN_RESULT(Students);
+END;
+
+EXEC Students;
+
+CREATE OR REPLACE PROCEDURE SemesterClass (N IN CHAR) AS
+f Char(15);
+BEGIN
+SELECT DISTINCT C.semester INTO f
+FROM Course C
+WHERE C.cid = N;
+DBMS_OUTPUT.PUT_LINE(N || ' is available for the semester of ' || f);
+END;
+
+EXEC SemesterClass('Course CID'):
+EXAMPLE EXEC SemesterClass('CSCI301'):
+
+
+CREATE OR REPLACE PROCEDURE EmailFind (N IN CHAR) AS
+f Char(30);
+BEGIN
+SELECT DISTINCT E.email INTO f
+FROM Person P, Student S, Assigned A, Email_address E
+WHERE P.pid = S.pid AND S.pid = A.pid AND A.email = E.email AND P.name = N;
+DBMS_OUTPUT.PUT_LINE(N || ' has an email address of ' || f);
+END;
+
+EXEC EmailFind('Student Name');
+EXAMPLE EXEC EmailFind('Mark');
+
+
+CREATE OR REPLACE PROCEDURE LotCarOwner (N IN CHAR)
+AS
+Cars SYS_REFCURSOR;
+BEGIN
+OPEN Cars FOR
+SELECT DISTINCT PK.pid, P.car_model
+FROM Parking P, Parks PK
+WHERE P.lot_name = N AND PK.permit_id = P.permit_id;
+DBMS_SQL.RETURN_RESULT(Cars);
+END;
+
+EXEC LotCarOwner('Lot');
+EXAMPLE EXEC LotCarOwner('E Lot');
+
+
+CREATE OR REPLACE PROCEDURE Teachers
+AS
+Teacher SYS_REFCURSOR;
+BEGIN
+OPEN Teacher FOR
+SELECT DISTINCT P.pid, P.name
+FROM Person P, Professor T
+WHERE P.pid = T.pid;
+DBMS_SQL.RETURN_RESULT(Teacher);
+END;
+
+EXEC Teachers;
