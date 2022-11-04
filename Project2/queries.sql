@@ -22,5 +22,5 @@ WHERE V.pid = P.pid AND
 -- find the pid of students that have a gpa of a 'B' average or worse
 SELECT V.pid
 FROM views V, transcript T
-WHERE V.tid = T.tid AND T.gpa < 3.00
+WHERE V.tid = T.tid AND T.gpa <= 3.00
 GROUP BY V.pid;
