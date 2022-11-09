@@ -281,7 +281,7 @@ VALUES(92001, 3, '2015 Mitsubishi Outlander', 'E Lot');
 INSERT INTO parking(permit_id, space_number, car_model, lot_name)
 VALUES(92077, 4, '2022 Toyota Tacoma', 'E Lot');
 INSERT INTO parking(permit_id, space_number, car_model, lot_name)
-VALUES(92399, 5, '2022 Tesla model 3', 'N Lot');
+VALUES(92399, 5, '2022 Tesla Model 3', 'N Lot');
 INSERT INTO parking(permit_id, space_number, car_model, lot_name)
 VALUES(92173, 6, '2015 BMW X6 ', 'N Lot');
 INSERT INTO parking(permit_id, space_number, car_model, lot_name)
