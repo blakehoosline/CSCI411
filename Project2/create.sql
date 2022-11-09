@@ -477,3 +477,25 @@ INSERT INTO assigned_to(cid, section, room_number, building)
 VALUES('CSCI411', 1, 104, 'ISELF');
 INSERT INTO assigned_to(cid, section, room_number, building)
 VALUES('MATH221', 1, 107, 'ECC');
+
+SELECT * FROM takes;
+SELECT * FROM assigned_to;
+SELECT * FROM picks;
+SELECT * FROM schedules;
+SELECT * FROM final_grade;
+SELECT * FROM parks;
+SELECT * FROM views;
+SELECT * FROM registers;
+SELECT * FROM teaches;
+SELECT * FROM assigned;
+SELECT * FROM volunteers;
+SELECT * FROM email_address;
+SELECT * FROM professor;
+SELECT * FROM student;
+SELECT * FROM transcript;
+SELECT * FROM volunteer_work;
+SELECT * FROM room;
+SELECT * FROM person;
+SELECT * FROM course;
+SELECT * FROM final_exam;
+SELECT * FROM parking;
