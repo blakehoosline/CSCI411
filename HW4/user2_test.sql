@@ -3,7 +3,7 @@ CREATE TABLE AGE(
     vid integer,
     vAge integer,
     PRIMARY KEY(vid),
-    FOREIGN KEY(vid) REFERENCES cs111111.Veterinarian(vid)
+    FOREIGN KEY(vid) REFERENCES cs411137.Veterinarian(vid)
 );
 
 INSERT INTO AGE(vid, vAge) VALUES(1001, 21);
@@ -13,37 +13,37 @@ INSERT INTO AGE(vid, vAge) VALUES(1004, 24);
 INSERT INTO AGE(vid, vAge) VALUES(1005, 19);
 
 
---Create view from table cs222222
+--Create view from table cs411140
 CREATE OR REPLACE VIEW Age_View
 AS SELECT vid, vAge
 FROM Age;
 
---Grant permission to cs111111
-GRANT SELECT, UPDATE ON Age_View TO cs111111;
+--Grant permission to cs411137
+GRANT SELECT, UPDATE ON Age_View TO cs411137;
 
 
---Test permissions given by cs111111 to cs222222
+--Test permissions given by cs411137 to cs411140
 
 --Insert into Veterinarian new values
-INSERT INTO cs111111.Veterinarian(vid, vName) VALUES(1006, 'Blake.H');
-INSERT INTO cs111111.Veterinarian(vid, vName) VALUES(1007, 'Brandon.N');
+INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1006, 'Blake.H');
+INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1007, 'Brandon.N');
 
 --Delete values from Veterinarian
-DELETE FROM cs111111.Veterinarian WHERE vid = '1006';
-DELETE FROM cs111111.Veterinarian WHERE vid = '1007';
+DELETE FROM cs411137.Veterinarian WHERE vid = '1006';
+DELETE FROM cs411137.Veterinarian WHERE vid = '1007';
 
---Find person that between 20 and 25 by join Age table in cs222222 with Veterinarian table in cs111111
+--Find person that between 20 and 25 by join Age table in cs411140 with Veterinarian table in cs411137
 SELECT vName, vAge
-FROM cs111111.Veterinarian, Age
-WHERE cs111111.veterinarian.vid = Age.vid
+FROM cs411137.Veterinarian, Age
+WHERE cs411137.veterinarian.vid = Age.vid
 AND Age BETWEEN 20 AND 25;
 
 
---Revoke permission by cs111111
-REVOKE UPDATE ON Age_View FROM cs111111;
+--Revoke permission by cs411137
+REVOKE UPDATE ON Age_View FROM cs411137;
 
 --Test if permissions were revoked
 
 --Update VIEW(View_Age) with new values
-UPDATE cs222222.Age_View SET vAge = 26 WHERE vid = 1003;
-UPDATE cs222222.Age_View SET vAge = 29 WHERE vid = 1005;
+UPDATE cs411140.Age_View SET vAge = 26 WHERE vid = 1003;
+UPDATE cs411140.Age_View SET vAge = 29 WHERE vid = 1005;
