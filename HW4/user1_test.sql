@@ -64,6 +64,6 @@ REVOKE INSERT, DELETE ON Veterinarian FROM cs411140;
 INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1008, 'Blake.No');
 INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1009, 'Brandon.No');
 
---2.Delete values from Veterinarian
+--Delete values from Veterinarian
 DELETE FROM cs411137.Veterinarian WHERE vid = '1002';
 DELETE FROM cs411137.Veterinarian WHERE vid = '1004';
