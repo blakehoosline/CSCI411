@@ -43,7 +43,7 @@ GRANT REFERENCES(vid) ON Veterinarian TO cs411140;
 --Test permissions given by cs411140 to cs411137
 
 --Update VIEW(View_Age) with new values
-UPDATE cs411140.Age_View SET vAge = 20 WHERE vid = 1006;
+UPDATE cs411140.Age_View SET vAge = 20 WHERE vid = 1005;
 UPDATE cs411140.Age_View SET vAge = 22 WHERE vid = 1001;
 
 --Find person name of the person from vid = 1003
