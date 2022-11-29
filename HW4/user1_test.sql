@@ -60,10 +60,6 @@ REVOKE INSERT, DELETE ON Veterinarian FROM cs411140;
 
 --Test if permissions were revoked
 
---Insert into Veterinarian new values
-INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1008, 'Blake.No');
-INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1009, 'Brandon.No');
-
---Delete values from Veterinarian
-DELETE FROM cs411137.Veterinarian WHERE vid = '1002';
-DELETE FROM cs411137.Veterinarian WHERE vid = '1004';
+--Update VIEW(View_Age) with new values
+UPDATE cs411140.Age_View SET vAge = 26 WHERE vid = 1003;
+UPDATE cs411140.Age_View SET vAge = 29 WHERE vid = 1005;
