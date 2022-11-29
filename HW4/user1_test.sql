@@ -15,6 +15,7 @@ VALUES(1004, 'Joshua');
 INSERT INTO Veterinarian(vid, vName)
 VALUES(1005, 'Anushka');
 
+SELECT * FROM Veterinarian;
 
 --Grant permission to cs411137
 
