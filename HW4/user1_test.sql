@@ -64,6 +64,9 @@ AND vid = 1001;
 --Revoke permission from cs411140
 REVOKE INSERT, DELETE ON Veterinarian FROM cs411140;
 
+--Revoke permission from cs411139
+REVOKE INSERT, DELETE ON Veterinarian FROM cs411139;
+
 
 --Test if permissions were revoked
 
