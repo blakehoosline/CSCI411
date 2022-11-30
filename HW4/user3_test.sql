@@ -21,7 +21,7 @@ DELETE FROM cs411137.Veterinarian WHERE vid = '1014';
 --Find the name of the veterinarian that has a vid of 1003 with Veterinarian table from cs411137
 SELECT vName
 FROM cs411137.Veterinarian
-WHERE cs411137.veterinarian.vid = 1003;
+WHERE cs411137.Veterinarian.vid = 1003;
 
 
 --Test if permissions were revoked
