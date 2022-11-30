@@ -41,6 +41,12 @@ GRANT SELECT, INSERT, DELETE ON Veterinarian TO cs411140;
 GRANT REFERENCES(vid) ON Veterinarian TO cs411140;
 
 
+--Grant permission to cs411139
+
+--Grant Select and Insert
+GRANT SELECT, INSERT, DELETE ON Veterinarian TO cs411139;
+
+
 --Test permissions given by cs411140 to cs411137
 
 --Update VIEW(View_Age) with new values
