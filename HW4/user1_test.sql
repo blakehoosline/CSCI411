@@ -51,7 +51,7 @@ UPDATE cs411140.Age_View SET vAge = 22 WHERE vid = 1001;
 SELECT vid, vName
 FROM Veterinarian, cs411140.View_Age
 WHERE Veterinarian.vid = cs411140.View_Age.vid
-AND vid = 1003;
+AND vid = 1001;
 
 
 
