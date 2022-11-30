@@ -23,7 +23,7 @@ SELECT * FROM Veterinarian;
 GRANT SELECT ON Veterinarian TO cs411137;
 
 --Grant REFERENCES on Veterinarian table
-GRANT REFERENCES(vid) ON Veterinarian TO cs411137;
+GRANT REFERENCES(*) ON Veterinarian TO cs411137;
 
 --Grant INSERT on Veterinarian table
 GRANT INSERT ON Veterinarian TO cs411137;
