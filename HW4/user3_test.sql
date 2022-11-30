@@ -22,3 +22,15 @@ DELETE FROM cs411137.Veterinarian WHERE vid = '1014';
 SELECT vName
 FROM cs411137.Veterinarian
 WHERE cs411137.veterinarian.vid = 1003;
+
+
+--Test if permissions were revoked
+
+
+--Insert into Veterinarian new values
+INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1008, 'Romeo1');
+INSERT INTO cs411137.Veterinarian(vid, vName) VALUES(1009, 'Romeo2');
+
+--Delete values from Veterinarian
+DELETE FROM cs411137.Veterinarian WHERE vid = '1003';
+DELETE FROM cs411137.Veterinarian WHERE vid = '1005';
